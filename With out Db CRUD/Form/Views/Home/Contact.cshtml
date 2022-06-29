@@ -1,0 +1,88 @@
+﻿@using Form.Models
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>orm.Models
+@model Form.Models.StudentDetail
+@{
+    ViewBag.Title = "Contact";
+    List<Student> lstStudents = TempData.ContainsKey("stdList") ? TempData["stdList"] as List<Student> : null;
+
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<style>
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+
+
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+{
+    <br />
+    <h4>
+        ID No :-
+        <br />
+
+        @Html.TextBoxFor(m => m.Studentmodel.ID, new { @id = "YU1" })
+
+    </h4>
+
+    <h4>
+        First Name :-
+        <br />
+
+        @Html.TextBoxFor(m => m.Studentmodel.FirstName, new { @id = "YU2" })
+
+    </h4>
+
+    <h4>
+        Second Name :-
+        <br />
+        @Html.TextBoxFor(m => m.Studentmodel.SecondName, new { @id = "YU3" })
+
+    </h4>
+    <br />
+
+    <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+    <br />
+    <br />
+
+}
+<table width="50%">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th  colspan="2">Actions</th>
+    </tr>
+
+    @if (lstStudents != null && lstStudents.Count() > 0)
+    {
+        foreach (var employee in lstStudents)
+        {
+            if (employee != null)
+            {
+                <tr>
+                    <td>@employee.ID</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.SecondName</td>
+                    <td><a class="btn btn-warning" href="@Url.Action("EditDetails","Home",new { @id=employee.ID})">Edit</a></td>
+                    <td><a class="btn btn-danger" href="@Url.Action("Delete","Home",new { @id=employee.ID})">Delete</a></td>
+                </tr>
+            }
+
+
+        }
+    }
+</table>

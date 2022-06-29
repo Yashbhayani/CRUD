@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="User_masterModelStoreContainer" CdmEntityContainer="User_masterEntities">
+    <EntitySetMapping Name="User_Master_Table_1">
+      <EntityTypeMapping TypeName="User_masterModel.User_Master_Table_1">
+        <MappingFragment StoreEntitySet="User_Master_Table_1">
+          <ScalarProperty Name="User_MasterID" ColumnName="User_MasterID" />
+          <ScalarProperty Name="User_MasterFName" ColumnName="User_MasterFName" />
+          <ScalarProperty Name="User_MasterSName" ColumnName="User_MasterSName" />
+          <ScalarProperty Name="User_MasterEmail" ColumnName="User_MasterEmail" />
+          <ScalarProperty Name="User_Master_MO_BO" ColumnName="User_Master_MO_BO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

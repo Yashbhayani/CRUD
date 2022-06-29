@@ -1,0 +1,32 @@
+﻿@model Form.Models.Student
+@{
+    ViewBag.Title = "Edit Your Contact Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Contact Details</h2>
+<div class="container">
+    <div class="col-md-12">
+        <div class="row-no-gutters">
+            <form method="post" action="@Url.Action("UpdateDetail","Home")">
+                @Html.HiddenFor(x => x.ID)
+                <div class="col-md-6">
+                    <label>ID</label>
+                    @Html.TextBoxFor(x => x.ID, null, new { @class = "form-control" })
+                </div>
+                <div class="col-md-6">
+                    <label>First Name</label>
+                    @Html.TextBoxFor(x => x.FirstName, null, new { @class = "form-control" })
+                </div>
+                <div class="col-md-6">
+                    <label>Last Name</label>
+                    @Html.TextBoxFor(x => x.SecondName, null, new { @class = "form-control" })
+                </div>
+                <button style="margin-top:20px" type="submit" class="btn btn-success">Update</button>
+
+            </form>
+        </div>
+    </div> <br />
+
+</div>
+
